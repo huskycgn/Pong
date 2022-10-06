@@ -11,15 +11,22 @@ class Ball(Turtle):
         self.x_move = 10
         self.y_move = 10
 
-    def move(self):
-        # self.setheading(45)
-        # while self.xcor() < 380 and self.ycor() < 280:
-        new_x = self.xcor() + self.x_move
-        new_y = self.ycor() + self.y_move
+    def move(self, player):
+        if player == 'r':
+            new_x = self.xcor() + self.x_move
+            new_y = self.ycor() + self.y_move
+        elif player == 'l':
+            new_x = self.xcor() - self.x_move
+            new_y = self.ycor() - self.y_move
+            print('linker Spieler fängt an!')
         self.goto(new_x, new_y)
+        print(self.xcor())
 
     def bounce_y(self):
         self.y_move *= -1
 
     def bounce_x(self):
         self.x_move *= -1
+
+    def reset(self):
+        self.goto(0, 0)
