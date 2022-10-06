@@ -32,7 +32,7 @@ nextplayer = 'r'
 while running:
 
     screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
     ball.move(nextplayer)
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
